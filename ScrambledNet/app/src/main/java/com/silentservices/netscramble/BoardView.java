@@ -245,16 +245,6 @@ public class BoardView extends View {
 	// ******************************************************************** //
 
 	/**
-	 * The application is starting. Perform any initial set-up prior to starting
-	 * the application. We may not have a screen size yet, so this is not a good
-	 * place to allocate resources which depend on that.
-	 */
-	@Override
-	protected void appStart() {
-
-	}
-
-	/**
 	 * Set the screen size. This is guaranteed to be called before animStart(),
 	 * but perhaps not before appStart().
 	 *
@@ -262,7 +252,6 @@ public class BoardView extends View {
 	 * @param height The new height of the surface.
 	 * @param config The pixel format of the surface.
 	 */
-	@Override
 	protected void appSize(int width, int height, Bitmap.Config config) {
 		// We usually get a zero-sized resize, which is useless;
 		// ignore it.
@@ -310,36 +299,6 @@ public class BoardView extends View {
 		// Load all the pixmaps for the game tiles etc.
 		Cell.initPixmaps(parentApp.getResources(), cellWidth, cellHeight,
 				config);
-	}
-
-	/**
-	 * We are starting the animation loop. The screen size is known.
-	 *
-	 * <p>
-	 * doUpdate() and doDraw() may be called from this point on.
-	 */
-	@Override
-	protected void animStart() {
-
-	}
-
-	/**
-	 * We are stopping the animation loop, for example to pause the app.
-	 *
-	 * <p>
-	 * doUpdate() and doDraw() will not be called from this point on.
-	 */
-	@Override
-	protected void animStop() {
-
-	}
-
-	/**
-	 * The application is closing down. Clean up any resources.
-	 */
-	@Override
-	protected void appStop() {
-
 	}
 
 	// ******************************************************************** //
